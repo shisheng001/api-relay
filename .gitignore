@@ -40,3 +40,5 @@ tunnel/
 .vscode/
 .idea/
 *.swp
+node_modules
+.playwright-cli
