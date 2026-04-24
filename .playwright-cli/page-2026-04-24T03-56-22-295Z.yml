@@ -1,0 +1,32 @@
+- generic [ref=e9085]:
+  - banner [ref=e9087]:
+    - generic [ref=e9088]:
+      - link "Railway Logo" [ref=e9089] [cursor=pointer]:
+        - /url: /
+        - img "Railway Logo" [ref=e9091]
+      - generic [ref=e9094]:
+        - button "New project" [ref=e9097] [cursor=pointer]:
+          - img [ref=e9099]
+          - generic [ref=e9101]: New project
+        - paragraph [ref=e9104]: GitHub
+    - navigation [ref=e9105]:
+      - button "Login" [ref=e9107] [cursor=pointer]
+  - region [ref=e9114]:
+    - generic [ref=e9119]:
+      - img [ref=e9120]
+      - generic [ref=e9123]:
+        - generic:
+          - img
+          - button "Login with GitHub Connect your GitHub account to deploy code on Railway. Login with GitHub" [ref=e9124]:
+            - generic [ref=e9128]:
+              - combobox [expanded] [active] [ref=e9131]
+              - listbox "Suggestions" [ref=e9132]:
+                - generic [ref=e9133]:
+                  - separator [ref=e9134]
+                  - option "Login with GitHub Connect your GitHub account to deploy code on Railway. Login with GitHub" [selected] [ref=e9135]:
+                    - img [ref=e9137]
+                    - generic [ref=e9139]:
+                      - paragraph [ref=e9140]: Login with GitHub
+                      - paragraph [ref=e9141]: Connect your GitHub account to deploy code on Railway.
+                    - button "Login with GitHub" [ref=e9142] [cursor=pointer]:
+                      - generic [ref=e9143]: Login with GitHub

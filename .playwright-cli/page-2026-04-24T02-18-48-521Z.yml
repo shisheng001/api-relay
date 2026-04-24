@@ -1,0 +1,625 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - region "Promotion" [ref=e4] [cursor=pointer]:
+      - generic [ref=e6]:
+        - generic [ref=e9]:
+          - generic [ref=e10]: 新方案上线．4/30 前升级或消费达标，送 $5–$50
+          - generic [ref=e11]: 6天 13时 40分 11秒
+        - button "查看方案" [ref=e12]:
+          - generic [ref=e13]: 查看方案
+          - generic [ref=e14]: →
+    - banner:
+      - generic [ref=e17]:
+        - link "logo" [ref=e19] [cursor=pointer]:
+          - /url: /zh-CN/
+          - img "logo" [ref=e20]
+        - navigation "Primary" [ref=e21]:
+          - generic [ref=e23]:
+            - button "产品" [ref=e25] [cursor=pointer]:
+              - text: 产品
+              - img [ref=e26]
+            - button "资源" [ref=e29] [cursor=pointer]:
+              - text: 资源
+              - img [ref=e30]
+            - button "社区" [ref=e33] [cursor=pointer]:
+              - text: 社区
+              - img [ref=e34]
+            - link "价格" [ref=e36] [cursor=pointer]:
+              - /url: /zh-CN/pricing
+        - generic [ref=e37]:
+          - radiogroup "Theme" [ref=e38]:
+            - radio "Light mode" [ref=e40] [cursor=pointer]:
+              - img [ref=e41]
+            - radio "System" [ref=e47] [cursor=pointer]:
+              - img [ref=e48]
+            - radio "Dark mode" [checked] [ref=e50] [cursor=pointer]:
+              - img [ref=e51]
+          - button [ref=e55] [cursor=pointer]:
+            - img [ref=e56]
+          - link "登录" [ref=e58] [cursor=pointer]:
+            - /url: /zh-CN/login
+            - button "登录" [ref=e59]
+    - region "Notifications alt+T":
+      - list:
+        - listitem [ref=e60]:
+          - generic [ref=e63]:
+            - generic [ref=e64]: 检测到您位于中国大陆
+            - generic [ref=e65]: 为了提供更好的服务体验，建议您使用 zeabur.cn
+            - generic [ref=e66]:
+              - button "不再显示" [ref=e67] [cursor=pointer]
+              - button "前往 zeabur.cn" [ref=e68] [cursor=pointer]
+    - main [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e76]:
+          - generic [ref=e77]:
+            - heading "你的 AI 运维工程师" [level=1] [ref=e78]
+            - generic [ref=e79]:
+              - text: 处理所有的
+              - generic [ref=e80]: 监控任务
+          - link "最新消息 设计之第一篇章：让落地页重新落地" [ref=e81] [cursor=pointer]:
+            - /url: /zh-CN/changelogs/landing-reland
+            - generic [ref=e83]: 最新消息
+            - generic [ref=e84]:
+              - generic [ref=e85]: 设计之第一篇章：让落地页重新落地
+              - img [ref=e86]
+        - generic [ref=e90]:
+          - generic [ref=e93]:
+            - img "No Design" [ref=e95]
+            - img "Loro" [ref=e97]
+            - img "Bytebase" [ref=e99]
+            - img "MiraclePlus" [ref=e101]
+            - img "六角學院" [ref=e103]
+            - img "Polish Design" [ref=e105]
+            - img "AFFiNE" [ref=e107]
+            - img "ChatHub" [ref=e109]
+          - generic [ref=e110]:
+            - img [ref=e112]
+            - img [ref=e114]
+            - img [ref=e116]
+            - img [ref=e118]
+            - img [ref=e120]
+            - img [ref=e122]
+            - img [ref=e124]
+            - img [ref=e126]
+        - generic [ref=e127]:
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - img [ref=e134]
+              - heading "只需专注于 代码" [level=3] [ref=e137]:
+                - text: 只需专注于
+                - text: 代码
+              - generic [ref=e140]:
+                - generic [ref=e141]:
+                  - generic [ref=e142]:
+                    - img [ref=e143]
+                    - generic [ref=e147]: "PR #2595"
+                    - generic [ref=e148]: "feat: add user authentication"
+                  - generic [ref=e149]:
+                    - generic [ref=e150]:
+                      - img [ref=e151]
+                      - generic [ref=e153]: Push
+                    - generic [ref=e154]:
+                      - img [ref=e155]
+                      - generic [ref=e157]: Building
+                    - generic [ref=e158]:
+                      - img [ref=e159]
+                      - generic [ref=e161]: Deployed
+                - generic [ref=e162]:
+                  - generic [ref=e163]:
+                    - img [ref=e164]
+                    - generic [ref=e168]: "PR #2594"
+                    - generic [ref=e169]: "fix: resolve memory leak issue"
+                  - generic [ref=e170]:
+                    - generic [ref=e171]:
+                      - img [ref=e172]
+                      - generic [ref=e174]: Push
+                    - generic [ref=e175]:
+                      - img [ref=e176]
+                      - generic [ref=e178]: Building
+                    - generic [ref=e179]:
+                      - img [ref=e180]
+                      - generic [ref=e182]: Deployed
+                - generic [ref=e183]:
+                  - generic [ref=e184]:
+                    - img [ref=e185]
+                    - generic [ref=e189]: "PR #2593"
+                    - generic [ref=e190]: "docs: update API documentation"
+                  - generic [ref=e191]:
+                    - generic [ref=e192]:
+                      - img [ref=e193]
+                      - generic [ref=e195]: Push
+                    - generic [ref=e196]:
+                      - img [ref=e197]
+                      - generic [ref=e199]: Building
+                    - generic [ref=e200]:
+                      - img [ref=e201]
+                      - generic [ref=e203]: Deployed
+                - generic [ref=e204]:
+                  - generic [ref=e205]:
+                    - img [ref=e206]
+                    - generic [ref=e210]: "PR #2592"
+                    - generic [ref=e211]: "refactor: optimize database queries"
+                  - generic [ref=e212]:
+                    - generic [ref=e213]:
+                      - img [ref=e214]
+                      - generic [ref=e216]: Push
+                    - generic [ref=e217]:
+                      - img [ref=e218]
+                      - generic [ref=e220]: Building
+                    - generic [ref=e221]:
+                      - img [ref=e222]
+                      - generic [ref=e224]: Deployed
+                - generic [ref=e225]:
+                  - generic [ref=e226]:
+                    - img [ref=e227]
+                    - generic [ref=e231]: "PR #2591"
+                    - generic [ref=e232]: "feat: implement dark mode"
+                  - generic [ref=e233]:
+                    - generic [ref=e234]:
+                      - img [ref=e235]
+                      - generic [ref=e237]: Push
+                    - generic [ref=e238]:
+                      - img [ref=e239]
+                      - generic [ref=e241]: Building
+                    - generic [ref=e242]:
+                      - img [ref=e243]
+                      - generic [ref=e245]: Deployed
+                - generic [ref=e246]:
+                  - generic [ref=e247]:
+                    - img [ref=e248]
+                    - generic [ref=e252]: "PR #2590"
+                    - generic [ref=e253]: "fix: correct payment calculation"
+                  - generic [ref=e254]:
+                    - generic [ref=e255]:
+                      - img [ref=e256]
+                      - generic [ref=e258]: Push
+                    - generic [ref=e259]:
+                      - img [ref=e260]
+                      - generic [ref=e262]: Building
+                    - generic [ref=e263]:
+                      - img [ref=e264]
+                      - generic [ref=e266]: Deployed
+              - paragraph [ref=e267]: Zeabur 可以自动地分析项目的代码，来判断项目使用的是什么编程语言或开发框架。
+            - generic [ref=e268]:
+              - img [ref=e270]
+              - heading "价格固定可预期 成本可控" [level=3] [ref=e273]:
+                - text: 价格固定可预期
+                - text: 成本可控
+              - img [ref=e275]:
+                - generic [ref=e279]: BUDGET
+                - generic [ref=e282]:
+                  - generic [ref=e285] [cursor=pointer]: Others
+                  - generic [ref=e288] [cursor=pointer]: Zeabur
+              - paragraph [ref=e289]:
+                - text: 固定价格方案，让每月支出清晰透明，不再有意外账单。
+                - link "定价页" [ref=e290] [cursor=pointer]:
+                  - /url: /zh-CN/pricing
+          - generic [ref=e294]:
+            - heading "用趁手的工具构建一流的项目" [level=2] [ref=e296]
+            - generic [ref=e298]:
+              - generic [ref=e299]:
+                - heading "服务器和集群" [level=3] [ref=e300]
+                - paragraph [ref=e301]: 选择您喜欢的地区和供应商，以专属资源部署服务，享有完整的控制权与稳定的性能表现。
+              - generic [ref=e313]:
+                - heading "AI Hub" [level=3] [ref=e314]
+                - paragraph [ref=e315]: 通过统一的 API 访问多种 AI 模型。按用量付费，无需预付费用或承诺。
+                - generic [ref=e317]:
+                  - img
+                  - generic [ref=e319]:
+                    - img "GPT" [ref=e321]
+                    - img "Claude" [ref=e323]
+                    - img "Gemini" [ref=e325]
+                    - img "DeepSeek" [ref=e327]
+                    - img "Grok" [ref=e329]
+                    - img "Qwen" [ref=e331]
+                    - img "GLM" [ref=e333]
+                    - img "Llama" [ref=e335]
+                    - img "Kimi" [ref=e337]
+                    - img "MiniMax" [ref=e339]
+                    - img "StepFun" [ref=e341]
+                    - img "GPT" [ref=e343]
+                    - img "Claude" [ref=e345]
+                    - img "Gemini" [ref=e347]
+                    - img "DeepSeek" [ref=e349]
+                    - img "Grok" [ref=e351]
+                    - img "Qwen" [ref=e353]
+                    - img "GLM" [ref=e355]
+                    - img "Llama" [ref=e357]
+                    - img "Kimi" [ref=e359]
+                    - img "MiniMax" [ref=e361]
+                    - img "StepFun" [ref=e363]
+                  - img "Zeabur" [ref=e365]
+                  - generic "Chat" [ref=e366]:
+                    - img [ref=e367]
+                  - generic "Code" [ref=e369]:
+                    - img [ref=e370]
+                  - generic "Image" [ref=e373]:
+                    - img [ref=e374]
+                  - generic "Text" [ref=e378]:
+                    - img [ref=e379]
+              - generic [ref=e382]:
+                - heading "域名与 DNS" [level=3] [ref=e383]
+                - paragraph [ref=e384]: 轻松管理域名和 DNS 记录。自动签发 SSL 证书、一键 DNS 配置，无缝集成。
+                - generic [ref=e386]:
+                  - generic [ref=e387]:
+                    - img [ref=e388]
+                    - generic [ref=e391]: example.com
+                    - generic [ref=e392]: Active
+                  - generic [ref=e393]:
+                    - generic [ref=e394]:
+                      - generic [ref=e395]: A
+                      - generic [ref=e396]: example.com
+                      - generic [ref=e397]: 76.32.18.5
+                    - generic [ref=e398]:
+                      - generic [ref=e399]: CNAME
+                      - generic [ref=e400]: www
+                      - generic [ref=e401]: example.com
+                    - generic [ref=e402]:
+                      - generic [ref=e403]: MX
+                      - generic [ref=e404]: "@"
+                      - generic [ref=e405]: mail.example.com
+                    - generic [ref=e406]:
+                      - generic [ref=e407]: TXT
+                      - generic [ref=e408]: "@"
+                      - generic [ref=e409]: v=spf1 include:...
+              - generic [ref=e410]:
+                - heading "邮件服务" [level=3] [ref=e411]
+                - paragraph [ref=e412]: 轻松发送交易邮件和营销邮件。稳定送达、简单集成、按用量计费。
+                - generic [ref=e414]:
+                  - generic [ref=e416]:
+                    - generic [ref=e417]:
+                      - img [ref=e418]
+                      - generic [ref=e421]: New Campaign
+                    - generic [ref=e422]: Draft
+                  - generic [ref=e428]:
+                    - generic [ref=e430]: alice@example.com
+                    - generic [ref=e433]: bob@example.com
+                    - generic [ref=e436]: carol@example.com
+          - generic [ref=e441]:
+            - generic [ref=e442]:
+              - text: ZEABUR SKILLS
+              - heading "让你的 Agent 一句话搞定所有部署与运维" [level=2] [ref=e443]
+              - paragraph [ref=e444]: Zeabur Agent Skills 将自然语言转化为基础设施操作。部署服务、租用服务器、管理配置——全部只需一句对话。
+            - generic [ref=e445]:
+              - generic [ref=e446]:
+                - button "租用 VPS 浏览并租用来自 AWS、Hetzner、Linode 等提供商的优惠服务器——只需告诉 Agent 你需要的配置。" [pressed] [ref=e447] [cursor=pointer]:
+                  - generic [ref=e448]:
+                    - generic [ref=e449]:
+                      - img [ref=e450]
+                      - heading "租用 VPS" [level=3] [ref=e454]
+                    - paragraph [ref=e455]: 浏览并租用来自 AWS、Hetzner、Linode 等提供商的优惠服务器——只需告诉 Agent 你需要的配置。
+                - button "部署服务 将你的本地项目或任何模板部署到服务器。Zeabur 会自动检测框架并处理一切。" [ref=e457] [cursor=pointer]:
+                  - generic [ref=e458]:
+                    - generic [ref=e459]:
+                      - img [ref=e460]
+                      - heading "部署服务" [level=3] [ref=e464]
+                    - paragraph [ref=e465]: 将你的本地项目或任何模板部署到服务器。Zeabur 会自动检测框架并处理一切。
+                - button "启用 AI 模型 激活 Zeabur AI Hub 即可访问 GPT-4o、Claude、Gemini 等模型——无需单独的 API 密钥。" [ref=e467] [cursor=pointer]:
+                  - generic [ref=e468]:
+                    - generic [ref=e469]:
+                      - img [ref=e470]
+                      - heading "启用 AI 模型" [level=3] [ref=e474]
+                    - paragraph [ref=e475]: 激活 Zeabur AI Hub 即可访问 GPT-4o、Claude、Gemini 等模型——无需单独的 API 密钥。
+              - generic [ref=e481]:
+                - generic [ref=e487]: Agent
+                - paragraph [ref=e489]: 滚动至此区域后将播放预览…
+            - link "了解 Skills" [ref=e491] [cursor=pointer]:
+              - /url: /zh-CN/skills
+              - button "了解 Skills" [ref=e492]:
+                - text: 了解 Skills
+                - img [ref=e494]
+          - generic [ref=e497]:
+            - heading "模板市场，立刻上线服务" [level=2] [ref=e499]
+            - generic [ref=e500]:
+              - generic [ref=e501]:
+                - paragraph [ref=e502]: Zeabur 提供各种模板供您选择，您可以在几秒钟内部署您的 AI 聊天机器人、Discord 机器人或表单。
+                - paragraph [ref=e503]:
+                  - text: 您还可以与他人分享您的模板并赚取收入。
+                  - link "了解更多" [ref=e504] [cursor=pointer]:
+                    - /url: https://zeabur.com/docs/billing/reward
+              - generic [ref=e506]:
+                - link "LobeChat LobeChat 5129 LobeChat 是一个开源、高性能的聊天机器人框架。 arvinxx 立即部署" [ref=e509] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/VZGGTI
+                  - generic [ref=e510]:
+                    - img "LobeChat" [ref=e512]
+                    - heading "LobeChat" [level=4] [ref=e513]
+                    - generic [ref=e514]:
+                      - img [ref=e515]
+                      - generic [ref=e517]: "5129"
+                  - paragraph [ref=e519]: LobeChat 是一个开源、高性能的聊天机器人框架。
+                  - generic [ref=e520]:
+                    - generic [ref=e521]: arvinxx
+                    - generic [ref=e522]:
+                      - generic [ref=e523]: 立即部署
+                      - img [ref=e524]
+                - link "WordPress WordPress 6566 一个内容管理系统（CMS），可以让您托管和构建网站。 Zeabur Official 立即部署" [ref=e528] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/CV344X
+                  - generic [ref=e529]:
+                    - img "WordPress" [ref=e531]
+                    - heading "WordPress" [level=4] [ref=e532]
+                    - generic [ref=e533]:
+                      - img [ref=e534]
+                      - generic [ref=e536]: "6566"
+                  - paragraph [ref=e538]: 一个内容管理系统（CMS），可以让您托管和构建网站。
+                  - generic [ref=e539]:
+                    - generic [ref=e540]: Zeabur Official
+                    - generic [ref=e541]:
+                      - generic [ref=e542]: 立即部署
+                      - img [ref=e543]
+                - link "Supabase Supabase 2582 开源的 Firebase 替代方案。我们使用企业级开源工具来构建 Firebase 的功能。 Zeabur Official 立即部署" [ref=e547] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/SUPABS
+                  - generic [ref=e548]:
+                    - img "Supabase" [ref=e550]
+                    - heading "Supabase" [level=4] [ref=e551]
+                    - generic [ref=e552]:
+                      - img [ref=e553]
+                      - generic [ref=e555]: "2582"
+                  - paragraph [ref=e557]: 开源的 Firebase 替代方案。我们使用企业级开源工具来构建 Firebase 的功能。
+                  - generic [ref=e558]:
+                    - generic [ref=e559]: Zeabur Official
+                    - generic [ref=e560]:
+                      - generic [ref=e561]: 立即部署
+                      - img [ref=e562]
+                - link "Dify Dify 3422 Dify 是一个开源的大型语言模型(LLM)应用开发平台。 Zeabur Official 立即部署" [ref=e566] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/1D4DOW
+                  - generic [ref=e567]:
+                    - img "Dify" [ref=e569]
+                    - heading "Dify" [level=4] [ref=e570]
+                    - generic [ref=e571]:
+                      - img [ref=e572]
+                      - generic [ref=e574]: "3422"
+                  - paragraph [ref=e576]: Dify 是一个开源的大型语言模型(LLM)应用开发平台。
+                  - generic [ref=e577]:
+                    - generic [ref=e578]: Zeabur Official
+                    - generic [ref=e579]:
+                      - generic [ref=e580]: 立即部署
+                      - img [ref=e581]
+                - link "RSSHub RSSHub 3466 从任何内容生成 RSS/Atom/JSON 订阅源 pseudoyu 立即部署" [ref=e585] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/X46PTP
+                  - generic [ref=e586]:
+                    - img "RSSHub" [ref=e588]
+                    - heading "RSSHub" [level=4] [ref=e589]
+                    - generic [ref=e590]:
+                      - img [ref=e591]
+                      - generic [ref=e593]: "3466"
+                  - paragraph [ref=e595]: 从任何内容生成 RSS/Atom/JSON 订阅源
+                  - generic [ref=e596]:
+                    - generic [ref=e597]: pseudoyu
+                    - generic [ref=e598]:
+                      - generic [ref=e599]: 立即部署
+                      - img [ref=e600]
+                - link "Uptime-Kuma Uptime-Kuma 2226 一个易于使用的自托管监控工具。 Zeabur Official 立即部署" [ref=e604] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/Q764RP
+                  - generic [ref=e605]:
+                    - img "Uptime-Kuma" [ref=e607]
+                    - heading "Uptime-Kuma" [level=4] [ref=e608]
+                    - generic [ref=e609]:
+                      - img [ref=e610]
+                      - generic [ref=e612]: "2226"
+                  - paragraph [ref=e614]: 一个易于使用的自托管监控工具。
+                  - generic [ref=e615]:
+                    - generic [ref=e616]: Zeabur Official
+                    - generic [ref=e617]:
+                      - generic [ref=e618]: 立即部署
+                      - img [ref=e619]
+                - link "PostgreSQL PostgreSQL 17615 强大、可靠的开源对象关系型数据库，具备丰富功能、ACID 合规与严格的数据完整性。 Zeabur Official 立即部署" [ref=e623] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/B20CX0
+                  - generic [ref=e624]:
+                    - img "PostgreSQL" [ref=e626]
+                    - heading "PostgreSQL" [level=4] [ref=e627]
+                    - generic [ref=e628]:
+                      - img [ref=e629]
+                      - generic [ref=e631]: "17615"
+                  - paragraph [ref=e633]: 强大、可靠的开源对象关系型数据库，具备丰富功能、ACID 合规与严格的数据完整性。
+                  - generic [ref=e634]:
+                    - generic [ref=e635]: Zeabur Official
+                    - generic [ref=e636]:
+                      - generic [ref=e637]: 立即部署
+                      - img [ref=e638]
+                - link "n8n n8n 31377 n8n 让你构建专注于数据集成的灵活工作流。 kaochenlong 立即部署" [ref=e642] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/JP88UN
+                  - generic [ref=e643]:
+                    - img "n8n" [ref=e645]
+                    - heading "n8n" [level=4] [ref=e646]
+                    - generic [ref=e647]:
+                      - img [ref=e648]
+                      - generic [ref=e650]: "31377"
+                  - paragraph [ref=e652]: n8n 让你构建专注于数据集成的灵活工作流。
+                  - generic [ref=e653]:
+                    - generic [ref=e654]: kaochenlong
+                    - generic [ref=e655]:
+                      - generic [ref=e656]: 立即部署
+                      - img [ref=e657]
+                - link "MySQL MySQL 9335 开源关系型数据库管理系统。 Zeabur Official 立即部署" [ref=e661] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/DGLGRG
+                  - generic [ref=e662]:
+                    - img "MySQL" [ref=e664]
+                    - heading "MySQL" [level=4] [ref=e665]
+                    - generic [ref=e666]:
+                      - img [ref=e667]
+                      - generic [ref=e669]: "9335"
+                  - paragraph [ref=e671]: 开源关系型数据库管理系统。
+                  - generic [ref=e672]:
+                    - generic [ref=e673]: Zeabur Official
+                    - generic [ref=e674]:
+                      - generic [ref=e675]: 立即部署
+                      - img [ref=e676]
+                - link "SillyTavern SillyTavern 9045 作为 AI 故事叙述和角色扮演的终极沙盒，SillyTavern 是一款功能强大、免费且开源的用户界面，用于与 AI 角色聊天。 Zeabur Official 立即部署" [ref=e680] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/DX09NM
+                  - generic [ref=e681]:
+                    - img "SillyTavern" [ref=e683]
+                    - heading "SillyTavern" [level=4] [ref=e684]
+                    - generic [ref=e685]:
+                      - img [ref=e686]
+                      - generic [ref=e688]: "9045"
+                  - paragraph [ref=e690]: 作为 AI 故事叙述和角色扮演的终极沙盒，SillyTavern 是一款功能强大、免费且开源的用户界面，用于与 AI 角色聊天。
+                  - generic [ref=e691]:
+                    - generic [ref=e692]: Zeabur Official
+                    - generic [ref=e693]:
+                      - generic [ref=e694]: 立即部署
+                      - img [ref=e695]
+                - link "Redis Redis 6767 Redis 是一个将数据存储在内存，并可持久化到硬盘的数据库。 Zeabur Official 立即部署" [ref=e699] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/KQZHXT
+                  - generic [ref=e700]:
+                    - img "Redis" [ref=e702]
+                    - heading "Redis" [level=4] [ref=e703]
+                    - generic [ref=e704]:
+                      - img [ref=e705]
+                      - generic [ref=e707]: "6767"
+                  - paragraph [ref=e709]: Redis 是一个将数据存储在内存，并可持久化到硬盘的数据库。
+                  - generic [ref=e710]:
+                    - generic [ref=e711]: Zeabur Official
+                    - generic [ref=e712]:
+                      - generic [ref=e713]: 立即部署
+                      - img [ref=e714]
+                - link "Python Function Python Function 3189 Python function runtime Zeabur Official 立即部署" [ref=e718] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/PJFFYJ
+                  - generic [ref=e719]:
+                    - img "Python Function" [ref=e721]
+                    - heading "Python Function" [level=4] [ref=e722]
+                    - generic [ref=e723]:
+                      - img [ref=e724]
+                      - generic [ref=e726]: "3189"
+                  - paragraph [ref=e728]: Python function runtime
+                  - generic [ref=e729]:
+                    - generic [ref=e730]: Zeabur Official
+                    - generic [ref=e731]:
+                      - generic [ref=e732]: 立即部署
+                      - img [ref=e733]
+                - link "Halo Halo 1430 强大易用的开源建站工具 Zeabur Official 立即部署" [ref=e737] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/Q6H2MA
+                  - generic [ref=e738]:
+                    - img "Halo" [ref=e740]
+                    - heading "Halo" [level=4] [ref=e741]
+                    - generic [ref=e742]:
+                      - img [ref=e743]
+                      - generic [ref=e745]: "1430"
+                  - paragraph [ref=e747]: 强大易用的开源建站工具
+                  - generic [ref=e748]:
+                    - generic [ref=e749]: Zeabur Official
+                    - generic [ref=e750]:
+                      - generic [ref=e751]: 立即部署
+                      - img [ref=e752]
+                - link "Memos Memos 671 注重隐私的轻量级笔记服务 Zeabur Official 立即部署" [ref=e756] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/KIJROJ
+                  - generic [ref=e757]:
+                    - img "Memos" [ref=e759]
+                    - heading "Memos" [level=4] [ref=e760]
+                    - generic [ref=e761]:
+                      - img [ref=e762]
+                      - generic [ref=e764]: "671"
+                  - paragraph [ref=e766]: 注重隐私的轻量级笔记服务
+                  - generic [ref=e767]:
+                    - generic [ref=e768]: Zeabur Official
+                    - generic [ref=e769]:
+                      - generic [ref=e770]: 立即部署
+                      - img [ref=e771]
+                - link "AFFiNE AFFiNE 418 A next-gen knowledge base that brings planning, sorting and creating all together. Zeabur Official 立即部署" [ref=e775] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/GSZA1K
+                  - generic [ref=e776]:
+                    - img "AFFiNE" [ref=e778]
+                    - heading "AFFiNE" [level=4] [ref=e779]
+                    - generic [ref=e780]:
+                      - img [ref=e781]
+                      - generic [ref=e783]: "418"
+                  - paragraph [ref=e785]: A next-gen knowledge base that brings planning, sorting and creating all together.
+                  - generic [ref=e786]:
+                    - generic [ref=e787]: Zeabur Official
+                    - generic [ref=e788]:
+                      - generic [ref=e789]: 立即部署
+                      - img [ref=e790]
+                - link "Umami Umami 424 Umami 让您轻松收集、分析和理解您的网站数据 Zeabur Official 立即部署" [ref=e794] [cursor=pointer]:
+                  - /url: https://zeabur.com/templates/01NQCC
+                  - generic [ref=e795]:
+                    - img "Umami" [ref=e797]
+                    - heading "Umami" [level=4] [ref=e798]
+                    - generic [ref=e799]:
+                      - img [ref=e800]
+                      - generic [ref=e802]: "424"
+                  - paragraph [ref=e804]: Umami 让您轻松收集、分析和理解您的网站数据
+                  - generic [ref=e805]:
+                    - generic [ref=e806]: Zeabur Official
+                    - generic [ref=e807]:
+                      - generic [ref=e808]: 立即部署
+                      - img [ref=e809]
+              - link "浏览模板" [ref=e812] [cursor=pointer]:
+                - /url: /zh-CN/templates
+                - button "浏览模板" [ref=e813]:
+                  - text: 浏览模板
+                  - img [ref=e815]
+        - generic [ref=e820]:
+          - generic [ref=e821]: 立即部署
+          - heading "准备好部署了？" [level=3] [ref=e822]
+          - paragraph [ref=e823]: 成为 AI 新时代的开发者
+          - link "现在开始" [ref=e825] [cursor=pointer]:
+            - /url: https://zeabur.com/projects?utm_source=zeabur&utm_medium=cta&utm_campaign=landing_page&utm_content=template_cta
+            - button "现在开始" [ref=e826]:
+              - text: 现在开始
+              - img [ref=e828]
+        - generic [ref=e831]:
+          - generic [ref=e832]:
+            - textbox [ref=e833]
+            - generic:
+              - generic: Ask Zeabur Agent
+              - generic: to deploy...
+          - generic [ref=e834]:
+            - button "Upload files or folder" [ref=e835] [cursor=pointer]:
+              - img [ref=e836]
+            - button [ref=e838] [cursor=pointer]:
+              - img [ref=e839]
+      - generic [ref=e845]:
+        - generic [ref=e846]:
+          - generic [ref=e848]:
+            - img "logo" [ref=e850]
+            - radiogroup "Theme" [ref=e851]:
+              - radio "Light mode" [ref=e853] [cursor=pointer]:
+                - img [ref=e854]
+              - radio "System" [ref=e860] [cursor=pointer]:
+                - img [ref=e861]
+              - radio "Dark mode" [checked] [ref=e863] [cursor=pointer]:
+                - img [ref=e864]
+          - generic [ref=e866]:
+            - generic [ref=e867]:
+              - generic [ref=e868]: 产品
+              - link "服务器和集群" [ref=e869] [cursor=pointer]:
+                - /url: /zh-CN/product/dedicated-server
+              - link "AI Hub" [ref=e870] [cursor=pointer]:
+                - /url: /zh-CN/product/ai-hub
+              - link "域名与 DNS" [ref=e871] [cursor=pointer]:
+                - /url: /zh-CN/product/domain
+              - link "邮件服务" [ref=e872] [cursor=pointer]:
+                - /url: /zh-CN/product/email
+            - generic [ref=e873]:
+              - generic [ref=e874]: 资源
+              - link "文档" [ref=e875] [cursor=pointer]:
+                - /url: /zh-CN/docs
+              - link "博客" [ref=e876] [cursor=pointer]:
+                - /url: /zh-CN/blogs
+              - link "更新日志" [ref=e877] [cursor=pointer]:
+                - /url: /zh-CN/changelogs
+              - link "价格" [ref=e878] [cursor=pointer]:
+                - /url: /zh-CN/pricing
+            - generic [ref=e879]:
+              - generic [ref=e880]: 社区
+              - link "Forum" [ref=e881] [cursor=pointer]:
+                - /url: https://zeabur.com/forum
+              - link "Discord" [ref=e882] [cursor=pointer]:
+                - /url: https://zeabur.com/dc
+              - link "X" [ref=e883] [cursor=pointer]:
+                - /url: https://x.com/zeaburapp
+              - link "Threads" [ref=e884] [cursor=pointer]:
+                - /url: https://www.threads.net/@zeabur.app
+            - generic [ref=e885]:
+              - generic [ref=e886]: 公司
+              - link "关于我们" [ref=e887] [cursor=pointer]:
+                - /url: /zh-CN/about
+              - link "加入我们" [ref=e888] [cursor=pointer]:
+                - /url: /zh-CN/careers
+            - generic [ref=e889]:
+              - generic [ref=e890]: 相关法律
+              - link "服务条款" [ref=e891] [cursor=pointer]:
+                - /url: /zh-CN/docs/legal/terms
+              - link "隐私政策" [ref=e892] [cursor=pointer]:
+                - /url: /zh-CN/docs/legal/privacy
+        - paragraph [ref=e894]: © 2026 Zeabur Inc.
+  - alert [ref=e895]
