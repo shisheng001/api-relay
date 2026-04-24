@@ -1,0 +1,31 @@
+# API中转站配置文件
+# ⚠️ 复制此文件为 config.toml 并填入真实值
+
+# OpenAI API配置
+[openai]
+api_key = "YOUR-OPENAI-API-KEY-HERE"
+base_url = "https://api.openai.com/v1"
+
+# Anthropic API配置（Claude）
+[anthropic]
+api_key = "YOUR-ANTHROPIC-API-KEY-HERE"
+base_url = "https://api.anthropic.com/v1"
+
+# 服务器配置
+[server]
+host = "0.0.0.0"
+port = 8000
+debug = false
+
+# 数据库配置
+[database]
+path = "api_relay.db"
+
+# 定价配置（元/百万tokens）
+[pricing]
+gpt_4o_input = 15
+gpt_4o_output = 60
+gpt_4o_mini_input = 3
+gpt_4o_mini_output = 12
+claude_3_5_sonnet_input = 12
+claude_3_5_sonnet_output = 36

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极简AI API中转 - 国内直连 · 低价高速</title>
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --primary-dark: #5a52e0;
+            --success: #00b894;
+            --bg: #0a0a1a;
+            --card: #13132a;
+            --border: #2a2a4a;
+            --text: #e8e8ff;
+            --muted: #8888aa;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 60px;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .logo span { color: var(--text); }
+        nav a { color: var(--muted); text-decoration: none; margin-left: 30px; font-size: 14px; }
+        nav a:hover { color: var(--text); }
+
+        /* ===== HERO ===== */
+        .hero {
+            text-align: center;
+            padding: 100px 20px 60px;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(108,99,255,0.15);
+            border: 1px solid rgba(108,99,255,0.4);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+        h1 .highlight {
+            background: linear-gradient(135deg, #6c63ff, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 500px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+        .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* ===== STATS ===== */
+        .stats {
+            display: flex; justify-content: center; gap: 60px;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; }
+        .stat-num { font-size: 40px; font-weight: 800; color: var(--primary); }
+        .stat-label { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+        /* ===== PRICING ===== */
+        .section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 12px; }
+        .section-sub { text-align: center; color: var(--muted); margin-bottom: 50px; }
+        
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .price-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.2s;
+        }
+        .price-card:hover { border-color: var(--primary); transform: translateY(-4px); }
+        .price-card.popular {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(108,99,255,0.1), rgba(168,85,247,0.05));
+        }
+        .popular-tag {
+            background: var(--primary);
+            color: white;
+            font-size: 11px;
+            padding: 3px 10px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        .model-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .price-row { display: flex; justify-content: space-between; margin: 10px 0; font-size: 14px; }
+        .price-row .label { color: var(--muted); }
+        .price-row .value { color: var(--success); font-weight: 600; }
+        .price-note { font-size: 12px; color: var(--muted); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+
+        /* ===== FEATURES ===== */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .feature-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+        }
+        .feature-icon { font-size: 32px; margin-bottom: 16px; }
+        .feature-title { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+        .feature-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+        /* ===== CODE DEMO ===== */
+        .code-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 720px;
+        }
+        .code-title { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+        .code-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+        .code-tab {
+            padding: 6px 16px; border-radius: 8px; font-size: 13px; cursor: pointer;
+            border: 1px solid var(--border); background: transparent; color: var(--muted);
+        }
+        .code-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+        pre {
+            background: #0d0d1f;
+            border-radius: 12px;
+            padding: 20px;
+            overflow-x: auto;
+            font-size: 13px;
+            line-height: 1.7;
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
+        .kw { color: #c792ea; }
+        .str { color: #c3e88d; }
+        .comment { color: #546e7a; }
+        .fn { color: #82aaff; }
+        .num { color: #f78c6c; }
+
+        /* ===== REGISTER ===== */
+        .register-section {
+            background: linear-gradient(135deg, rgba(108,99,255,0.12), rgba(168,85,247,0.08));
+            border: 1px solid rgba(108,99,255,0.3);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .register-title { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+        .register-sub { color: var(--muted); margin-bottom: 30px; font-size: 15px; }
+        .input-group { display: flex; gap: 12px; max-width: 420px; margin: 0 auto 16px; }
+        .input-group input {
+            flex: 1; padding: 14px 18px; border-radius: 10px;
+            border: 1px solid var(--border); background: var(--card);
+            color: var(--text); font-size: 15px; outline: none;
+        }
+        .input-group input:focus { border-color: var(--primary); }
+        .input-group button {
+            padding: 14px 24px; border-radius: 10px;
+            background: var(--primary); color: white;
+            border: none; cursor: pointer; font-size: 15px; font-weight: 600;
+            white-space: nowrap;
+        }
+        .input-group button:hover { background: var(--primary-dark); }
+        .result-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+            display: none;
+        }
+        .result-box.show { display: block; }
+        .result-key { font-family: monospace; font-size: 13px; color: var(--success); word-break: break-all; }
+        .result-hint { font-size: 13px; color: var(--muted); margin-top: 8px; }
+        .copy-btn {
+            background: var(--primary); color: white; border: none;
+            padding: 8px 16px; border-radius: 8px; cursor: pointer;
+            font-size: 12px; margin-top: 10px;
+        }
+        .gift-badge {
+            display: inline-block;
+            background: rgba(0,184,148,0.15);
+            border: 1px solid rgba(0,184,148,0.4);
+            color: var(--success);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 600px) {
+            nav { padding: 16px 20px; }
+            .input-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">极简<span>API</span></div>
+    <div>
+        <a href="#pricing">价格</a>
+        <a href="#docs">文档</a>
+        <a href="/admin">管理后台</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="badge">🚀 国内直连 · 无需代理</div>
+    <h1>最简单的<br><span class="highlight">国产AI API</span><br>接入方式</h1>
+    <p class="subtitle">兼容 OpenAI 格式，一行代码替换，即用即付，注册即送 5 元余额</p>
+    <div class="cta-group">
+        <a href="#register" class="btn-primary">免费注册领余额</a>
+        <a href="#docs" class="btn-outline">查看文档</a>
+    </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+    <div class="stat-item">
+        <div class="stat-num">5元</div>
+        <div class="stat-label">注册即送余额</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num">3元</div>
+        <div class="stat-label">qwen-turbo 每百万token</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num">0</div>
+        <div class="stat-label">不需要代理/VPN</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">兼容 OpenAI 格式</div>
+    </div>
+</div>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+    <div class="section-title">清晰透明的价格</div>
+    <div class="section-sub">按 token 计费，用多少付多少，无月费无订阅</div>
+    <div class="pricing-grid">
+        <div class="price-card popular">
+            <div class="popular-tag">最受欢迎</div>
+            <div class="model-name">qwen-turbo</div>
+            <div class="price-row">
+                <span class="label">输入</span>
+                <span class="value">3 元/M tokens</span>
+            </div>
+            <div class="price-row">
+                <span class="label">输出</span>
+                <span class="value">6 元/M tokens</span>
+            </div>
+            <div class="price-note">速度快，日常对话/RAG/工具调用首选</div>
+        </div>
+        <div class="price-card">
+            <div class="model-name">qwen-plus</div>
+            <div class="price-row">
+                <span class="label">输入</span>
+                <span class="value">10 元/M tokens</span>
+            </div>
+            <div class="price-row">
+                <span class="label">输出</span>
+                <span class="value">25 元/M tokens</span>
+            </div>
+            <div class="price-note">能力更强，适合复杂推理与长文本</div>
+        </div>
+        <div class="price-card">
+            <div class="model-name">qwen-max</div>
+            <div class="price-row">
+                <span class="label">输入</span>
+                <span class="value">80 元/M tokens</span>
+            </div>
+            <div class="price-row">
+                <span class="label">输出</span>
+                <span class="value">200 元/M tokens</span>
+            </div>
+            <div class="price-note">旗舰模型，媲美 GPT-4o</div>
+        </div>
+        <div class="price-card">
+            <div class="model-name">qwen-coder-plus</div>
+            <div class="price-row">
+                <span class="label">输入</span>
+                <span class="value">35 元/M tokens</span>
+            </div>
+            <div class="price-row">
+                <span class="label">输出</span>
+                <span class="value">90 元/M tokens</span>
+            </div>
+            <div class="price-note">代码专项模型，写代码/调试首选</div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+    <div class="section-title">为什么选择我们</div>
+    <div class="section-sub">专为国内开发者设计</div>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🇨🇳</div>
+            <div class="feature-title">国内直连，无需科学</div>
+            <div class="feature-desc">服务器在国内，访问速度快，延迟低，不需要代理或 VPN，告别网络折腾。</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔌</div>
+            <div class="feature-title">OpenAI 格式兼容</div>
+            <div class="feature-desc">只需改一行 base_url，现有基于 OpenAI SDK 的项目无缝迁移，零学习成本。</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <div class="feature-title">按量付费，无隐藏费</div>
+            <div class="feature-desc">用多少付多少，没有月订阅，没有最低消费。余额永不过期。</div>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎁</div>
+            <div class="feature-title">注册即送 5 元</div>
+            <div class="feature-desc">新用户注册立得 5 元余额，够跑几百次 qwen-turbo 调用，充分体验后再充值。</div>
+        </div>
+    </div>
+</section>
+
+<!-- CODE DEMO -->
+<section class="section" id="docs">
+    <div class="section-title">30秒接入</div>
+    <div class="section-sub">改一行代码，无缝替换 OpenAI</div>
+    <div class="code-section">
+        <div class="code-title">Python 接入示例</div>
+        <div class="code-tabs">
+            <button class="code-tab active" onclick="showTab('python',this)">Python</button>
+            <button class="code-tab" onclick="showTab('curl',this)">cURL</button>
+            <button class="code-tab" onclick="showTab('node',this)">Node.js</button>
+        </div>
+        <div id="tab-python">
+<pre><span class="kw">from</span> openai <span class="kw">import</span> OpenAI
+
+client = OpenAI(
+    api_key=<span class="str">"sk-relay-你的key"</span>,  <span class="comment"># 注册后获取</span>
+    base_url=<span class="str">"https://stones-guns-waterproof-saying.trycloudflare.com/v1"</span>
+)
+
+response = client.<span class="fn">chat.completions.create</span>(
+    model=<span class="str">"qwen-turbo"</span>,
+    messages=[{<span class="str">"role"</span>: <span class="str">"user"</span>, <span class="str">"content"</span>: <span class="str">"你好！"</span>}]
+)
+<span class="fn">print</span>(response.choices[<span class="num">0</span>].message.content)</pre>
+        </div>
+        <div id="tab-curl" style="display:none">
+<pre><span class="kw">curl</span> https://stones-guns-waterproof-saying.trycloudflare.com/v1/chat/completions \
+  -H <span class="str">"Authorization: Bearer sk-relay-你的key"</span> \
+  -H <span class="str">"Content-Type: application/json"</span> \
+  -d <span class="str">'{
+    "model": "qwen-turbo",
+    "messages": [{"role": "user", "content": "你好"}]
+  }'</span></pre>
+        </div>
+        <div id="tab-node" style="display:none">
+<pre><span class="kw">import</span> OpenAI <span class="kw">from</span> <span class="str">'openai'</span>;
+
+<span class="kw">const</span> client = <span class="kw">new</span> <span class="fn">OpenAI</span>({
+  apiKey: <span class="str">'sk-relay-你的key'</span>,
+  baseURL: <span class="str">'https://stones-guns-waterproof-saying.trycloudflare.com/v1'</span>
+});
+
+<span class="kw">const</span> res = <span class="kw">await</span> client.chat.completions.<span class="fn">create</span>({
+  model: <span class="str">'qwen-turbo'</span>,
+  messages: [{role: <span class="str">'user'</span>, content: <span class="str">'你好！'</span>}]
+});
+console.<span class="fn">log</span>(res.choices[<span class="num">0</span>].message.content);</pre>
+        </div>
+    </div>
+</section>
+
+<!-- REGISTER -->
+<section class="section" id="register">
+    <div class="register-section">
+        <div class="gift-badge">🎁 注册即送 5 元余额</div>
+        <div class="register-title">立即开始使用</div>
+        <div class="register-sub">输入用户名，立刻获得 API Key，无需手机验证</div>
+        <div class="input-group">
+            <input type="text" id="username-input" placeholder="输入你的用户名" maxlength="20">
+            <button onclick="doRegister()">免费注册</button>
+        </div>
+        <div id="register-result" class="result-box">
+            <div style="font-size:14px;margin-bottom:8px;color:#8888aa;">你的 API Key（请妥善保存）：</div>
+            <div class="result-key" id="api-key-display"></div>
+            <div class="result-hint">Base URL：<code style="color:#6c63ff">https://stones-guns-waterproof-saying.trycloudflare.com/v1</code></div>
+            <div class="result-hint" style="margin-top:6px">余额：<span style="color:#00b894;font-weight:600">5.00 元</span> 已到账</div>
+            <button class="copy-btn" onclick="copyKey()">复制 Key</button>
+        </div>
+        <div id="register-error" style="color:#e17055;margin-top:12px;font-size:14px;display:none"></div>
+    </div>
+</section>
+
+<footer>
+    <p>极简API中转 · 国内直连 OpenAI 兼容服务 · 按量付费</p>
+    <p style="margin-top:8px">问题反馈 · <a href="/admin" style="color:var(--primary)">管理后台</a></p>
+</footer>
+
+<script>
+function showTab(name, btn) {
+    ['python','curl','node'].forEach(t => {
+        document.getElementById('tab-'+t).style.display = t===name?'block':'none';
+    });
+    document.querySelectorAll('.code-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+}
+
+async function doRegister() {
+    const username = document.getElementById('username-input').value.trim();
+    const errEl = document.getElementById('register-error');
+    const resultEl = document.getElementById('register-result');
+    errEl.style.display = 'none';
+    resultEl.classList.remove('show');
+    
+    if (!username) {
+        errEl.textContent = '请输入用户名';
+        errEl.style.display = 'block';
+        return;
+    }
+    if (username.length < 2) {
+        errEl.textContent = '用户名至少2个字符';
+        errEl.style.display = 'block';
+        return;
+    }
+
+    try {
+        const resp = await fetch('/api/user/create', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({username})
+        });
+        const data = await resp.json();
+        if (data.success) {
+            document.getElementById('api-key-display').textContent = data.api_key;
+            resultEl.classList.add('show');
+            resultEl.scrollIntoView({behavior:'smooth', block:'center'});
+        } else {
+            errEl.textContent = data.detail || '注册失败，请重试';
+            errEl.style.display = 'block';
+        }
+    } catch(e) {
+        errEl.textContent = '网络错误，请稍后重试';
+        errEl.style.display = 'block';
+    }
+}
+
+function copyKey() {
+    const key = document.getElementById('api-key-display').textContent;
+    navigator.clipboard.writeText(key).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '已复制!';
+        setTimeout(() => btn.textContent = '复制 Key', 2000);
+    });
+}
+
+// Enter key support
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('username-input').addEventListener('keydown', e => {
+        if (e.key === 'Enter') doRegister();
+    });
+});
+</script>
+</body>
+</html>

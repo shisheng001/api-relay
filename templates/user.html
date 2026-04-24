@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API中转站 - 用户中心</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+        
+        h1 { 
+            text-align: center; 
+            margin-bottom: 30px;
+            color: #2d3436;
+        }
+        
+        .api-key-box {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .api-key-label {
+            font-size: 14px;
+            color: #636e72;
+            margin-bottom: 10px;
+        }
+        
+        .api-key-value {
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 13px;
+            word-break: break-all;
+            color: #2d3436;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 2px dashed #dfe6e9;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #f1f2f6;
+            color: #2d3436;
+        }
+        
+        .btn-secondary:hover {
+            background: #dfe6e9;
+        }
+        
+        .balance {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            border-radius: 12px;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .balance-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .balance-value {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .balance-unit {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2d3436;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+        }
+        
+        .toast.show {
+            opacity: 1;
+        }
+        
+        .info {
+            background: #e8f4fd;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .info h3 {
+            color: #0984e3;
+            margin-bottom: 10px;
+        }
+        
+        .info code {
+            background: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .pricing {
+            margin-top: 20px;
+        }
+        
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f2f6;
+        }
+        
+        .pricing-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🔑 API中转站</h1>
+            
+            <div class="balance">
+                <div class="balance-label">账户余额</div>
+                <div class="balance-value" id="balance">-</div>
+                <div class="balance-unit">元</div>
+            </div>
+            
+            <div class="api-key-box">
+                <div class="api-key-label">你的 API Key</div>
+                <div class="api-key-value" id="apiKey">加载中...</div>
+            </div>
+            
+            <button class="btn btn-primary" onclick="copyKey()">📋 复制 API Key</button>
+            <button class="btn btn-secondary" onclick="showPricing()">💰 查看价格表</button>
+            
+            <div id="pricingBox" class="info pricing" style="display: none;">
+                <h3>📊 价格表（元/百万Token）</h3>
+                <div class="pricing-item">
+                    <span>GPT-4o 输入</span>
+                    <span>¥15</span>
+                </div>
+                <div class="pricing-item">
+                    <span>GPT-4o 输出</span>
+                    <span>¥60</span>
+                </div>
+                <div class="pricing-item">
+                    <span>GPT-4o-mini 输入</span>
+                    <span>¥3</span>
+                </div>
+                <div class="pricing-item">
+                    <span>GPT-4o-mini 输出</span>
+                    <span>¥12</span>
+                </div>
+                <div class="pricing-item">
+                    <span>Claude 3.5 Sonnet 输入</span>
+                    <span>¥12</span>
+                </div>
+                <div class="pricing-item">
+                    <span>Claude 3.5 Sonnet 输出</span>
+                    <span>¥36</span>
+                </div>
+            </div>
+            
+            <div class="info" style="margin-top: 30px;">
+                <h3>🚀 快速开始</h3>
+                <p style="margin-top: 10px; color: #636e72; line-height: 1.8;">
+                    1. 复制你的 API Key<br>
+                    2. 设置 base_url 为本中转站地址<br>
+                    3. 开始使用 OpenAI API
+                </p>
+                <pre style="margin-top: 15px; padding: 15px; background: #2d3436; color: #dfe6e9; border-radius: 8px; font-size: 13px; overflow-x: auto;"><code>from openai import OpenAI
+
+client = OpenAI(
+    api_key="你的API Key",
+    base_url="https://本中转站域名/v1"
+)
+
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Hello!"}]
+)</code></pre>
+            </div>
+        </div>
+    </div>
+    
+    <div class="toast" id="toast">已复制</div>
+
+    <script>
+        // 从URL获取API Key
+        const urlParams = new URLSearchParams(window.location.search);
+        const apiKey = urlParams.get('key') || localStorage.getItem('apiKey') || '';
+        
+        if (apiKey) {
+            localStorage.setItem('apiKey', apiKey);
+            document.getElementById('apiKey').textContent = apiKey;
+            loadUserInfo(apiKey);
+        } else {
+            document.getElementById('apiKey').textContent = '请先登录获取 API Key';
+        }
+        
+        async function loadUserInfo(key) {
+            try {
+                const res = await fetch('/api/user/info', {
+                    headers: { 'Authorization': `Bearer ${key}` }
+                });
+                const data = await res.json();
+                document.getElementById('balance').textContent = data.balance?.toFixed(2) || '0.00';
+            } catch (e) {
+                console.error('加载用户信息失败:', e);
+            }
+        }
+        
+        function copyKey() {
+            const key = document.getElementById('apiKey').textContent;
+            if (key && key !== '请先登录获取 API Key' && key !== '加载中...') {
+                navigator.clipboard.writeText(key).then(() => {
+                    showToast('API Key 已复制');
+                });
+            }
+        }
+        
+        function showPricing() {
+            const box = document.getElementById('pricingBox');
+            box.style.display = box.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        }
+    </script>
+</body>
+</html>

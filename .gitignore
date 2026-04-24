@@ -1,0 +1,42 @@
+# 敏感文件
+.env
+.env.local
+.env.production
+
+# 数据库（包含用户数据）
+api_relay.db
+
+# 调试/测试脚本（不含示例模板）
+debug_user.py
+test_local.py
+test_chrome.py
+fix_security.py
+publish_xhs.py
+publish_xhs.bat
+publish_xhs2.bat
+run_public.py
+
+# 临时文件
+__pycache__/
+*.pyc
+*.pyo
+*.log
+logs/
+
+# 图片截图（包含调试截图）
+*.png
+!promo_images/*.png
+
+# Tunnel 相关（本地临时）
+tunnel_url.txt
+start_tunnel.ps1
+start_tunnel.py
+start_cloudflared.py
+run_tunnel.ps1
+cloudflared.exe
+tunnel/
+
+# IDE
+.vscode/
+.idea/
+*.swp
