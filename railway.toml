@@ -1,0 +1,7 @@
+[railway]
+name = "api-relay"
+[railway.variable]
+PORT = "8000"
+
+[build]
+builder = "DOCKERFILE"
